@@ -102,13 +102,13 @@ defmodule Maru.Builder.DSLsTest do
     end
 
     assert [
-             %MaruPlug{guards: true, name: nil, options: [], plug: :a},
-             %MaruPlug{guards: {:>, _, [1, 0]}, name: nil, options: [], plug: :a},
-             %MaruPlug{guards: {:>, _, [1, 0]}, name: nil, options: [opts: true], plug: :a},
-             %MaruPlug{guards: true, name: nil, options: [], plug: P},
-             %MaruPlug{guards: {:>, _, [1, 0]}, name: nil, options: [], plug: P},
-             %MaruPlug{guards: {:>, _, [1, 0]}, name: nil, options: "options", plug: P}
-           ] = PlugTest.p()
+      %MaruPlug{guards: true, name: nil, options: [], plug: :a},
+      %MaruPlug{guards: {:>, _, [1, 0]}, name: nil, options: [], plug: :a},
+      %MaruPlug{guards: {:>, _, [1, 0]}, name: nil, options: [opts: true], plug: :a},
+      %MaruPlug{guards: true, name: nil, options: [], plug: P},
+      %MaruPlug{guards: {:>, _, [1, 0]}, name: nil, options: [], plug: P},
+      %MaruPlug{guards: {:>, _, [1, 0]}, name: nil, options: "options", plug: P}
+    ] = PlugTest.p()
   end
 
   test "plug_overridable" do
@@ -131,18 +131,18 @@ defmodule Maru.Builder.DSLsTest do
     end
 
     assert [
-             %MaruPlug{name: nil, plug: :a},
-             %MaruPlug{name: :name, plug: :c},
-             %MaruPlug{name: nil, plug: P}
-           ] = PlugOverridableTest.p1()
+      %MaruPlug{name: nil, plug: :a},
+      %MaruPlug{name: :name, plug: :c},
+      %MaruPlug{name: nil, plug: P}
+    ] = PlugOverridableTest.p1()
 
     assert [
-             %MaruPlug{name: nil, plug: :a},
-             %MaruPlug{name: :name, plug: :d},
-             %MaruPlug{name: nil, plug: P},
-             %MaruPlug{name: nil, plug: P},
-             %MaruPlug{name: :x, plug: :a}
-           ] = PlugOverridableTest.p2()
+      %MaruPlug{name: nil, plug: :a},
+      %MaruPlug{name: :name, plug: :d},
+      %MaruPlug{name: nil, plug: P},
+      %MaruPlug{name: nil, plug: P},
+      %MaruPlug{name: :x, plug: :a}
+    ] = PlugOverridableTest.p2()
   end
 
   test "named params" do
